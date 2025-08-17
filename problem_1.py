@@ -59,57 +59,31 @@ Constraints
 # arr = list(map(int, input().strip().split()))
 # P = int(input().strip())
 
-# if len(arr) != n:
-#     print("Array size mismatch")
-# else:
-#     arr.sort() 
-#     found = False
 
-#     for i in range(n - 2):
-#         left = i + 1
-#         right = n - 1
-
-#         while left < right:
-#             total = arr[i] + arr[left] + arr[right]
-
-#             if total == P:
-#                 print(arr[i], arr[left], arr[right])
-#                 found = True
-#                 break 
-
-#             elif total < P:
-#                 left += 1
-#             else:
-#                 right -= 1
-
-#         if found:
-#             break
-
-#     if not found:
-#         print("No triplet found")
-
-
-
-n = 6
-print(n, type(n))
-arr = [12, 3, 4, 1, 6, 9]
-P = 24
+n = int(input().strip())
+arr = list(map(int, input().strip().split()))
+p = int(input().strip())
 
 if len(arr) != n:
     print("Array size mismatch")
 else:
-    arr.sort() 
-    found = False
-	
+    arr.sort() 	
+    found =False
     for i in range(n - 2):
         left = i+1
         right =n-1
-        print('f',i,left,'=',i, right)
+
         while left < right:
             total = arr[i] + arr[left] + arr[right]
-            print(total)
             
-            if total < P:
+            if total == p:
+                print( arr[i], arr[left], arr[right])
+                found=True
+                break
+            elif total < p:
                 left += 1
             else:
                 right -= 1
+        if found:
+            break
+
