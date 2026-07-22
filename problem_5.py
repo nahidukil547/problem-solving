@@ -89,3 +89,54 @@
 # Can you solve this challenge in 4 lines of code or less?
 # NOTE: There is no penalty for solutions that are correct but have more than 4 lines.
 
+# https://www.hackerrank.com/challenges/py-collections-namedtuple/problem.
+
+
+from collections import namedtuple
+
+n = int(input())
+student = namedtuple('student',input().split())
+total = 0
+for i in range(n):
+    s= student(*input().split())
+    total += int(s.MARKS)
+avg = total / n
+print(avg)
+
+# 5
+
+# ID MARKS NAME CLASS
+# 1 97 Raymond 7
+# 2 50 Steven 4
+# 3 91 Adrian 9
+# 4 72 Stewart 5
+# 5 80 Peter 6
+
+
+
+# ferocious2006
+# from collections import namedtuple n = int(input())
+
+# column = input().split() student = namedtuple("student" ,column) marks = 0 for i in range(n): students = student(*input().split()) marks+= int(students.MARKS)
+
+# avg = marks/n print(f"{avg:.2f}")
+
+
+# wenjun_pan_busi1
+# 4 lines code? for what? has no meaning. and this solution has nothing to do with namedtuple. Useless.
+
+# record_count,labels=int(input()),input().split()
+# row=[n for n in range(len(labels)) if labels[n] =='MARKS'][0] # find idx of mark 
+# print(sum(int(input().split()[row]) for _ in range(record_count))/record_count)
+
+# # better example
+# from collections import namedtuple
+# N,student = int(input()),namedtuple('student', input().split())
+# total=sum(int(student(*input().split()).MARKS) for _ in range(N))
+# print(total/N)
+
+# m_antonio_riv
+# from collections import namedtuple
+# n, Student = int(input()), namedtuple('Student', input().split())
+# average = sum((int(Student._make(input().split()).MARKS) for _ in range(n))) / n
+# print("%.2f" % average)
